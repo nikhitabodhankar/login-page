@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace Student_Registration_new
+{
+    public partial class Form1 : Form
+    {
+        string cs = ConfigurationManager.ConnectionStrings["dbcs"].ConnectionString;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            bool check = checkBox2.Checked;
+
+            switch(check)
+            {
+                case true:
+                    textBox3.UseSystemPasswordChar = false;
+                    break;
+                default:
+                    textBox3.UseSystemPasswordChar = true;
+                    break;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           SqlConnection con
+        }
+    }
+}
